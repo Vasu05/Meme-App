@@ -78,6 +78,17 @@ class MemeGridVC: UIViewController, UICollectionViewDelegate ,UICollectionViewDa
         
         return CGSize.init(width: self.view.frame.width/2 - 32, height: 156)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let obj = memesDataSource![indexPath.row]
+        
+        let memeDetailVC = storyboard?.instantiateViewController(withIdentifier: "MemeDetailsVC") as! MemeDetailsVC
+        
+        navigationController?.pushViewController(memeDetailVC, animated: true)
+        memeDetailVC.pImage = obj.memedImage
+        
+    }
 
     /*
     // MARK: - Navigation

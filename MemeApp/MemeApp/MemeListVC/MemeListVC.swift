@@ -82,7 +82,13 @@ class MemeListVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let obj = memesDataSource![indexPath.row]
         
+        let memeDetailVC = storyboard?.instantiateViewController(withIdentifier: "MemeDetailsVC") as! MemeDetailsVC
+        
+        navigationController?.pushViewController(memeDetailVC, animated: true)
+        memeDetailVC.pImage = obj.memedImage
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

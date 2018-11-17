@@ -318,6 +318,49 @@
             </objects>
             <point key="canvasLocation" x="-1035" y="182"/>
         </scene>
+        <!--Meme DetailsVC-->
+        <scene sceneID="En2-Dh-HM9">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailsVC" id="SY1-of-zwG" customClass="MemeDetailsVC" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJn-Do-5WA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lut-R7-F8d">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1zm-86-vYD">
+                                        <rect key="frame" x="0.0" y="124" width="320" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="cEn-bE-XJY"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1zm-86-vYD" firstAttribute="centerY" secondItem="lut-R7-F8d" secondAttribute="centerY" id="3R5-eY-NnD"/>
+                                    <constraint firstAttribute="trailing" secondItem="1zm-86-vYD" secondAttribute="trailing" id="QV4-Kc-dVo"/>
+                                    <constraint firstItem="1zm-86-vYD" firstAttribute="leading" secondItem="lut-R7-F8d" secondAttribute="leading" id="uTP-gD-xEd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h69-rd-byG" firstAttribute="trailing" secondItem="lut-R7-F8d" secondAttribute="trailing" id="3Uh-ne-Txj"/>
+                            <constraint firstItem="h69-rd-byG" firstAttribute="bottom" secondItem="lut-R7-F8d" secondAttribute="bottom" id="Qnz-PD-RCI"/>
+                            <constraint firstItem="lut-R7-F8d" firstAttribute="leading" secondItem="h69-rd-byG" secondAttribute="leading" id="RBF-Iy-YrE"/>
+                            <constraint firstItem="lut-R7-F8d" firstAttribute="top" secondItem="h69-rd-byG" secondAttribute="top" id="juD-sN-LQ6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h69-rd-byG"/>
+                    </view>
+                    <connections>
+                        <outlet property="mImageView" destination="1zm-86-vYD" id="xXR-2R-Hxf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOQ-9Q-O5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1099" y="990"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cameraicon" width="37.5" height="37.5"/>

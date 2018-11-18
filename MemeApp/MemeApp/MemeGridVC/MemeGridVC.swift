@@ -12,6 +12,7 @@ import Photos
 class MemeGridVC: UIViewController, UICollectionViewDelegate ,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var mCollectionView : UICollectionView!
+    @IBOutlet weak var mNoDataView:UIView!
     
     let identifier = "CltnCell"
     var memesDataSource:[MemeModel]?
@@ -71,6 +72,13 @@ class MemeGridVC: UIViewController, UICollectionViewDelegate ,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (memesDataSource?.count)! > 0
+        {
+            mNoDataView.isHidden = true
+        }
+        else{
+            mNoDataView.isHidden  = false
+        }
         return memesDataSource?.count ?? 0
     }
     

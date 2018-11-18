@@ -11,9 +11,10 @@ import UIKit
 class MemeListVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var mTableView: UITableView!
+    @IBOutlet weak var mNoDataView:UIView!
     
     let identifier = "TbleCell"
-    let identfier2 = "TableViewCelltsing"
+    let memeDetailIdentifier = "MemeDetailsVC"
     var memesDataSource:[MemeModel]?
 
     override func viewDidLoad() {
@@ -78,14 +79,22 @@ class MemeListVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memesDataSource?.count ?? 0;
+        
+        if (memesDataSource?.count)! > 0
+        {
+            mNoDataView.isHidden = true
+        }
+        else{
+            mNoDataView.isHidden  = false
+        }
+        return memesDataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         let obj = memesDataSource![indexPath.row]
         
-        let memeDetailVC = storyboard?.instantiateViewController(withIdentifier: "MemeDetailsVC") as! MemeDetailsVC
+        let memeDetailVC = storyboard?.instantiateViewController(withIdentifier: memeDetailIdentifier) as! MemeDetailsVC
         
         navigationController?.pushViewController(memeDetailVC, animated: true)
         memeDetailVC.pImage = obj.memedImage
